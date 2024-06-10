@@ -109,14 +109,14 @@ public class CotizacionServiceImpl implements CotizacionService {
 
 			if (!cotizacion.isEmpty()) {
 				for (Cotizacion cotizacion2 : cotizacion) {
-					String idCliente = UUID.randomUUID().toString();
+					//String idCliente = UUID.randomUUID().toString();
 					Clientes cliente = primaryRepositoryCliente.findById(cotizacion2.getCliente_id()).get();
 					if (cliente != null) {
 						ResponseEntity<String> responseClient= null;
 						boolean existe=false;
 						if(cliente.getEstado().equalsIgnoreCase("Pendiente")){
 							Cliente client = new Cliente();
-							client.setIdCliente(idCliente);
+							client.setIdCliente(cliente.getId());
 							client.setNombres(cliente.getNombre());
 							client.setTelefono(cliente.getTelefono());
 							client.setEmail(cliente.getCorreo());
@@ -134,6 +134,7 @@ public class CotizacionServiceImpl implements CotizacionService {
 									requestEntity, String.class);
 							if(responseClient.getStatusCodeValue() == 200) {
 								// Actualizo el cliente
+								//cliente.setId(idCliente);
 								cliente.setEstado("Agregado");
 								primaryRepositoryCliente.save(cliente);
 								existe=true;
@@ -141,6 +142,7 @@ public class CotizacionServiceImpl implements CotizacionService {
 								
 						}else if(cliente.getEstado().equalsIgnoreCase("Agregado")){
 							existe=true;
+							//idCliente= cliente.getId();
 						}
 						
 
@@ -151,7 +153,7 @@ public class CotizacionServiceImpl implements CotizacionService {
 							pref.setEstado(7);
 							pref.setFecha_hora(formatoSinHora.format(calendar.getTime()));
 							pref.setFecha_hora_creado(formato.format(calendar.getTime()));
-							pref.setId_cliente(idCliente);
+							pref.setId_cliente(cliente.getId());
 							pref.setId_cotizacion_producto(cotizacion2.getId());
 							pref.setId_moneda(1);
 							pref.setId_plazo(1);
@@ -301,7 +303,7 @@ public class CotizacionServiceImpl implements CotizacionService {
 			}
 
 		} catch (Exception e) {
-			return new ResponseEntity<String>(e.getCause().getMessage(), HttpStatus.NOT_ACCEPTABLE);
+			return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_ACCEPTABLE);
 
 		}
 		return null;

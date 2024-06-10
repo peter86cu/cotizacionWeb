@@ -12,15 +12,15 @@ public class Clientes implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id 
-	private int id;
+	private String id;
 	private String nombre;
 	private String correo;
 	private int telefono;
 	private String estado;
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getNombre() {

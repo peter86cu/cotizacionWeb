@@ -18,7 +18,7 @@ public class Cotizacion implements Serializable {
 	private Date fecha_creacion;
 	private String mensaje;
 	private int soporte;
-	private int cliente_id;
+	private String cliente_id;
 	private String producto_id;
 	private String app_id;
 	private String apis_id;
@@ -53,10 +53,10 @@ public class Cotizacion implements Serializable {
 	public void setSoporte(int soporte) {
 		this.soporte = soporte;
 	}
-	public int getCliente_id() {
+	public String getCliente_id() {
 		return cliente_id;
 	}
-	public void setCliente_id(int cliente_id) {
+	public void setCliente_id(String cliente_id) {
 		this.cliente_id = cliente_id;
 	}
 	
