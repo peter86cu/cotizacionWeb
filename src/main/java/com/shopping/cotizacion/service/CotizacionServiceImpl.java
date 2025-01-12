@@ -298,7 +298,7 @@ public class CotizacionServiceImpl implements CotizacionService {
 					}
 				}
 			}else {
-				return new ResponseEntity<String>("No se existen cotizaciones en la web.", HttpStatus.OK);
+				return new ResponseEntity<String>("No se existen cotizaciones en la web.", HttpStatus.NO_CONTENT);
 
 			}
 
