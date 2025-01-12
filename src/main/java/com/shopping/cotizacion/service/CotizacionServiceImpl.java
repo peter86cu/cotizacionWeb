@@ -21,17 +21,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 
-import com.ayalait.modelo.Cliente;
-import com.ayalait.modelo.Producto;
-import com.ayalait.modelo.Session;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.google.gson.Gson;
-import com.multishop.modelo.Prefactura;
-import com.multishop.modelo.PrefacturaDetalle;
+import com.shopping.cotizacion.modelo.Cliente;
 import com.shopping.cotizacion.modelo.Clientes;
 import com.shopping.cotizacion.modelo.Cotizacion;
 import com.shopping.cotizacion.modelo.DetalleCotizacion;
+import com.shopping.cotizacion.modelo.Prefactura;
+import com.shopping.cotizacion.modelo.PrefacturaDetalle;
+import com.shopping.cotizacion.modelo.Producto;
 import com.shopping.cotizacion.modelo.Secciones;
 import com.shopping.cotizacion.repositorio.PrimaryRepositoryClientes;
 import com.shopping.cotizacion.repositorio.PrimaryRepositoryCotizacion;
@@ -110,7 +110,7 @@ public class CotizacionServiceImpl implements CotizacionService {
 			if (!cotizacion.isEmpty()) {
 				for (Cotizacion cotizacion2 : cotizacion) {
 					//String idCliente = UUID.randomUUID().toString();
-					Clientes cliente = primaryRepositoryCliente.findById(cotizacion2.getCliente_id()).get();
+					Clientes cliente = primaryRepositoryCliente.obtenerClienteId(cotizacion2.getCliente_id());
 					if (cliente != null) {
 						ResponseEntity<String> responseClient= null;
 						boolean existe=false;
