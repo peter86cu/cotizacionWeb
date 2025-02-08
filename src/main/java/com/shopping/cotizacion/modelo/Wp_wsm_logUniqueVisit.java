@@ -1,4 +1,4 @@
-package com.shopping.dashboard.modelo;
+package com.shopping.cotizacion.modelo;
 
 import java.io.Serializable;
 import javax.persistence.*;

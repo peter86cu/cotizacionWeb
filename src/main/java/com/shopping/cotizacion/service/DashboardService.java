@@ -1,8 +1,8 @@
-package com.shopping.dashboard.service;
+package com.shopping.cotizacion.service;
 
 import org.springframework.http.ResponseEntity;
 
-public interface CotizacionService {
+public interface DashboardService {
 
 	
 	

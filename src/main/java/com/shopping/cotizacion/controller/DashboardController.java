@@ -1,4 +1,4 @@
-package com.shopping.dashboard.controller;
+package com.shopping.cotizacion.controller;
 
 
 
@@ -12,14 +12,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.shopping.dashboard.service.CotizacionService;
+import com.shopping.cotizacion.service.DashboardService;
+
 
 
 @RestController
-public class CotizacionController {
+public class DashboardController {
 
 	@Autowired
-	CotizacionService service;
+	DashboardService service;
 	
 	@GetMapping(value = "dashboard/visitantes", produces = MediaType.APPLICATION_JSON_VALUE)
 	@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST })

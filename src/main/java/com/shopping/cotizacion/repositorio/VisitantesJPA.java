@@ -1,11 +1,12 @@
-package com.shopping.dashboard.repositorio;
+package com.shopping.cotizacion.repositorio;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.shopping.dashboard.modelo.Wp_wsm_logUniqueVisit;
+import com.shopping.cotizacion.modelo.Wp_wsm_logUniqueVisit;
+
 
 
 public interface VisitantesJPA extends JpaRepository<Wp_wsm_logUniqueVisit, Integer> {

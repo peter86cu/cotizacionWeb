@@ -1,4 +1,4 @@
-package com.shopping.dashboard.service;
+package com.shopping.cotizacion.service;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,12 +22,13 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.google.gson.Gson;
-import com.shopping.dashboard.repositorio.VisitantesJPA;
-import com.shopping.dashboard.vo.ErrorState;
-import com.shopping.dashboard.vo.VisitantesLog;
+import com.shopping.cotizacion.repositorio.VisitantesJPA;
+import com.shopping.cotizacion.vo.ErrorState;
+import com.shopping.cotizacion.vo.VisitantesLog;
+
 
 @Service
-public class CotizacionServiceImpl implements CotizacionService {
+public class DashboardServiceImpl implements DashboardService {
 
 	public String stock;
 
@@ -64,7 +65,7 @@ public class CotizacionServiceImpl implements CotizacionService {
 
 	}
 
-	public CotizacionServiceImpl() {
+	public DashboardServiceImpl() {
 		try {
 			if (desarrollo) {
 				stock = "http://localhost:8082";

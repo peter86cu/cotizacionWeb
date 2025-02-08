@@ -1,4 +1,4 @@
-package com.shopping.dashboard.vo;
+package com.shopping.cotizacion.vo;
 
 public class VisitantesLog {
 	
